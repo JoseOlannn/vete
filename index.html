@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Clínica Veterinaria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <header class="top-bar">
+            <div class="logo-container">
+                <i class="fas fa-paw"></i>
+                <h1>Gestión Clínica Veterinaria</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar mascotas, dueños, citas...">
+                <i class="fas fa-search"></i>
+            </div>
+        </header>
+
+        <main class="main-content-grid">
+            
+            <section class="main-panel">
+                
+                <div class="card-section">
+                    <h2>Pacientes</h2>
+                    <div class="filters-bar">
+                        <input type="text" placeholder="Buscar por nombre o dueño">
+                        <button class="btn-filter selected">Especie: Todas</button>
+                        <button class="btn-filter">Raza: Todas</button>
+                        <button class="btn-sort">Ordenar pacientes <i class="fas fa-sort-amount-down-alt"></i></button>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Especie</th>
+                                <th>Raza</th>
+                                <th>Edad</th>
+                                <th>Peso</th>
+                                <th>Dueño</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="selected-row">
+                                <td>Luna</td>
+                                <td>Perro</td>
+                                <td>Labrador</td>
+                                <td>4 años</td>
+                                <td>32 kg</td>
+                                <td>Juan Pérez</td>
+                            </tr>
+                            <tr>
+                                <td>Max</td>
+                                <td>Gato</td>
+                                <td>Montés</td>
+                                <td>2 años</td>
+                                <td>5 kg</td>
+                                <td>Ana Gómez</td>
+                            </tr>
+                            <tr>
+                                <td>Rocco</td>
+                                <td>Perro</td>
+                                <td>Bulldog</td>
+                                <td>8 años</td>
+                                <td>28 kg</td>
+                                <td>Mario Torres</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="register-form-container">
+                        <h3>Registrar nueva mascota</h3>
+                        <form class="two-col-form">
+                            <div><label>Nombre:</label><input type="text" value="Luna"></div>
+                            <div><label>Raza:</label><input type="text" value="Labrador"></div>
+                            <div><label>Especie:</label><select><option>Perro</option></select></div>
+                            <div><label>Peso:</label><input type="text" value="4"></div>
+                            <div><label>Fecha Nacimiento:</label><input type="date"></div>
+                            <div><label>Alergias / Condiciones:</label><textarea rows="3"></textarea></div>
+                            
+                            <div class="form-separator">Dueño</div>
+                            <div class="form-separator"></div>
+
+                            <div><label>Dueño:</label><input type="text" value="Juan Pérez"></div>
+                            <div><label>Teléfono:</label><input type="text" value="+52 55 1234 5678"></div>
+                            <div><label>Dirección:</label><input type="text" value="4ta Comalcalco 123"></div>
+                            <div><label>Correo:</label><input type="email" value="jperez@ejemplo.com"></div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn-secondary">Cancelar</button>
+                                <button type="submit" class="btn-primary">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div> <div class="card-section">
+                    <h2>Citas</h2>
+                    
+                    <div class="calendar-header">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>Marzo 2025</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+
+                    <div class="calendar-grid">
+                        <div class="day-slot selected"><span>Hoy</span> 1</div>
+                        <div class="day-slot"><span>Mañana</span> 2</div>
+                        <div class="day-slot">3</div>
+                        <div class="day-slot has-event"><span>Cirugía</span> 4</div>
+                        <div class="day-slot">5</div>
+                    </div>
+
+                    <div class="register-form-container">
+                        <h3>Programar nueva cita</h3>
+                        <form class="two-col-form">
+                            <div><label>Fecha:</label><input type="date" value="2025-03-24"></div>
+                            <div><label>Hora:</label><input type="time" value="12:00"></div>
+                            <div><label>Mascota:</label><input type="text" value="Luna"></div>
+                            <div><label>Dueño:</label><input type="text" value="Juan Pérez"></div>
+                            <div><label>Veterinario:</label><select><option>Dra. María López</option></select></div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="urgente"><label for="urgente">Es cita de hoy/mañana</label>
+                            </div>
+                            
+                            <div class="full-width"><label>Motivo:</label><input type="text" value="Control general"></div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn-secondary">Cancelar</button>
+                                <button type="submit" class="btn-success">Programar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div> <div class="card-section">
+                    <h2>Usuarios</h2>
+                    <table class="data-table users-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Cargo</th>
+                                <th>Email</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dra. María López</td>
+                                <td>Veterinaria</td>
+                                <td>m.lopez@clinicavet.com</td>
+                                <td class="actions">
+                                    <button class="btn-edit">Editar</button>
+                                    <button class="btn-delete">Eliminar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Carlos Ruiz</td>
+                                <td>Admin</td>
+                                <td>carlos@clinicavet.com</td>
+                                <td class="actions">
+                                    <button class="btn-edit">Editar</button>
+                                    <button class="btn-delete">Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="register-form-container">
+                        <h3>Registrar usuario</h3>
+                        <form class="two-col-form">
+                            <div><label>Nombre:</label><input type="text" placeholder="Nuevo usuario"></div>
+                            <div><label>Email:</label><input type="email" placeholder="Correo"></div>
+                            <div><label>Contraseña:</label><input type="password" placeholder="Contraseña"></div>
+                            <div><label>Cargo:</label><select><option>Veterinario</option></select></div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn-secondary">Cancelar</button>
+                                <button type="submit" class="btn-primary">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div> </section> <aside class="sidebar-panel">
+                
+                <div class="detail-card">
+                    <h3>Detalle de mascota</h3>
+                    <div class="profile-header">
+                        <img src="https://i.pravatar.cc/150?img=1" alt="Luna" class="profile-pic">
+                        <div class="profile-info">
+                            <span class="name">Luna</span>
+                            <span class="type">Hembra / Labrador</span>
+                        </div>
+                    </div>
+                    <div class="status-box">
+                        Esterilizada. Vacunas al día.
+                    </div>
+                    <div class="date-info">
+                        **Control anual:** 02/05/2025. **Vacuna:** 15/12/2025.
+                    </div>
+                </div>
+                
+                <div class="detail-card">
+                    <h3>Citas pendientes</h3>
+                    <div class="pending-appointment-list">
+                        <div class="pending-item">
+                            <span class="date">Hoy 12:00</span>
+                            <span class="patient">Luna - Control</span>
+                            <div class="actions">
+                                <button class="btn-modify">Modificar</button>
+                                <button class="btn-cancel">Cancelar</button>
+                            </div>
+                        </div>
+                        <div class="pending-item">
+                            <span class="date">Mañana 08:00</span>
+                            <span class="patient">Max - Vacuna</span>
+                            <div class="actions">
+                                <button class="btn-confirm">Confirmar</button>
+                                <button class="btn-cancel">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <h3>Reportes</h3>
+                    <h4>Reportes atendidos</h4>
+                    <div class="image-gallery">
+                        <img src="https://picsum.photos/400/200" alt="Reporte 1">
+                    </div>
+                    
+                    <h4>Tabla de reportes</h4>
+                    <table class="report-table">
+                        <thead>
+                            <tr>
+                                <th>Reporte</th>
+                                <th>Desde</th>
+                                <th>Hasta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Pediatría</td>
+                                <td>01/08/2025</td>
+                                <td>31/08/2025</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </aside> </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
